@@ -13,10 +13,11 @@
         android:theme="@style/Theme.Eatpromo"
         tools:targetApi="31">
         <activity
-            android:name=".Detailles"
+            android:name=".homePage"
             android:exported="false" />
         <activity
-            android:name=".homePage"
+
+            android:name=".Detailles"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
