@@ -1,4 +1,4 @@
-package com.example.eatpromo;
+package com.eat.maroc.promo;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

@@ -52,11 +52,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.eatpromo"
+    namespace = "com.eat.maroc.promo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.eatpromo"
+        applicationId = "com.eat.maroc.promo"
         minSdk = 28
         targetSdk = 34
         versionCode = 1
