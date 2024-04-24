@@ -17,8 +17,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#F4F6F6"
-            android:backgroundTint="#D5D6D6"
+            android:background="#E91E63"
+            android:backgroundTint="#E13225"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -75,16 +75,6 @@
                 tools:ignore="MissingConstraints">
 
             </LinearLayout>
-
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="@+id/prixC"
-                app:layout_constraintStart_toStartOf="@+id/prixC"
-                app:layout_constraintTop_toBottomOf="@+id/prixC"
-                app:srcCompat="@android:drawable/ic_menu_info_details" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

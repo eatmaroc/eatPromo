@@ -1,7 +1,6 @@
 package com.eat.maroc.promo;
 
 import android.os.Bundle;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class Detailles extends AppCompatActivity {
     ImageView image;
     TextView titre,type,prix,ville,cartier,detailles;
-    WebView map;
+//    WebView map;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +31,6 @@ public class Detailles extends AppCompatActivity {
         ville=findViewById(R.id.villedetailles);
         cartier=findViewById(R.id.cartierDetailles);
         detailles=findViewById(R.id.discriptionDetailles);
-        map=findViewById(R.id.imgDeatilles);
+//        map=findViewById(R.id.imgDeatilles);
     }
 }
