@@ -326,7 +326,7 @@ public class homePage extends AppCompatActivity   {
         intent.putExtra("title", item.getTitle());
         intent.putExtra("type", item.getType());
         intent.putExtra("prix", item.getPrix());
-
+        intent.putExtra("image", item.getImage());
 
         startActivity(intent);
     }
