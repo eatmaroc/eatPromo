@@ -25,13 +25,13 @@ public class Detailles extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        image=findViewById(R.id.imgDeatilles);
-        titre=findViewById(R.id.titreDeatailles);
-        type=findViewById(R.id.typeDetailles);
-        prix=findViewById(R.id.prixDetailles);
-        ville=findViewById(R.id.villedetailles);
-        cartier=findViewById(R.id.cartierDetailles);
-        detailles=findViewById(R.id.discriptionDetailles);
-        map=findViewById(R.id.imgDeatilles);
+//        image=findViewById(R.id.imgDeatilles);
+//        titre=findViewById(R.id.titleDetailles);
+//        type=findViewById(R.id.typeDetailles);
+//        prix=findViewById(R.id.prixDetailles);
+//        ville=findViewById(R.id.villedetailles);
+//        cartier=findViewById(R.id.cartierDetailles);
+//        detailles=findViewById(R.id.discriptionDetailles);
+//        map=findViewById(R.id.imgDeatilles);
     }
 }
