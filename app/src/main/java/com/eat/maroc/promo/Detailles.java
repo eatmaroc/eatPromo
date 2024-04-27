@@ -1,6 +1,7 @@
 package com.eat.maroc.promo;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,6 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.squareup.picasso.Picasso;
 
 
 public class Detailles extends AppCompatActivity {
@@ -42,6 +44,17 @@ public class Detailles extends AppCompatActivity {
         titre.setText(getIntent().getStringExtra("title"));
         type.setText(getIntent().getStringExtra("type"));
         prix.setText(getIntent().getStringExtra("prix"));
+        detailles.setText(getIntent().getStringExtra("description"));
+        String imgUrl=getIntent().getStringExtra("image");
+        Picasso.get().load(imgUrl).into(image);
+        order.setOnClickListener(v->{
+            Intent intent = new Intent(Detailles.this, order.class);
+            intent.putExtra("location",getIntent().getStringExtra("location"));
+            intent.putExtra("adress", getIntent().getStringExtra("adress"));
+            intent.putExtra("whatsapp", getIntent().getStringExtra("whatsapp"));
+            startActivity(intent);
+        });
+
 
         // Load the image using Picasso
        // image.setImageResource(getIntent().getIntExtra("image",0));

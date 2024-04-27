@@ -15,17 +15,19 @@ public class Item implements Parcelable, Serializable {
     String adress;
     String ville;
     String quartier;
+    String location;
 
-    public Item(String title, String type, String prix, String image, String whatsapp, String description, String adress, String ville, String quartier) {
-        this.title = title;
-        this.type = type;
-        this.prix = prix;
-        this.image = image;
-        this.whatsapp = whatsapp;
-        this.description = description;
-        this.adress = adress;
+    public Item(String title, String type, String prix, String image, String whatsapp, String description, String adress, String ville, String quartier,String location){
+        this.title=title;
+        this.type=type;
+        this.prix=prix;
+        this.image=image;
+        this.whatsapp=whatsapp;
+        this.description=description;
+        this.adress=adress;
         this.ville = ville;
         this.quartier = quartier;
+        this.location=location;
     }
 
     protected Item(Parcel in) {
@@ -38,6 +40,7 @@ public class Item implements Parcelable, Serializable {
         adress = in.readString();
         ville = in.readString();
         quartier = in.readString();
+        location=in.readString();
     }
 
     public static final Creator<Item> CREATOR = new Creator<Item>() {
@@ -63,6 +66,14 @@ public class Item implements Parcelable, Serializable {
         dest.writeString(adress);
         dest.writeString(ville);
         dest.writeString(quartier);
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     @Override
