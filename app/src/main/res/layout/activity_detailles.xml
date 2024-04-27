@@ -3,34 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="#00000000"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Detailles">
 
     <ImageView
         android:id="@+id/imgDeatilles"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:scaleType="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitStart"
         android:src="@drawable/pain"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_marginTop="200dp"
         android:background="@drawable/backhround"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnOrder"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="NotSibling">
 
         <LinearLayout
@@ -66,41 +67,42 @@
                 android:textStyle="italic" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/prixD"
+            android:layout_width="404dp"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="TextView"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/prixD"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:text="TextView"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
             android:id="@+id/discriptionDetailles"
             android:layout_width="match_parent"
-            android:layout_height="182dp"
+            android:layout_height="226dp"
             android:text="Enhance text clarity and understanding using an AI-driven paraphrasing tool. Perfect for students and professionals, this tool rewrites, edits, and adjusts tone for improved comprehension.  Rephrase sentences, paragraphs, essays, and articles effortlessly with our powerful paraphraser. Prevent plagiarism in blogs, research papers, and more using cutting-edge technology"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="43dp" />
-
-        <Button
-            android:id="@+id/btnOrder"
-            android:layout_width="185dp"
-            android:layout_height="62dp"
-            android:layout_gravity="center"
-            android:text="Button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

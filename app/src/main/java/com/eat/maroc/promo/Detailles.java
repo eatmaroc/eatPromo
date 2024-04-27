@@ -12,7 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.squareup.picasso.Picasso;
+
 
 public class Detailles extends AppCompatActivity {
     ImageView image;
@@ -44,9 +44,8 @@ public class Detailles extends AppCompatActivity {
         prix.setText(getIntent().getStringExtra("prix"));
 
         // Load the image using Picasso
-        int imageUrl = getIntent().getIntExtra("image",0);
-        if (imageUrl != 0 ) {
-            Picasso.get().load(imageUrl).into(image);
-        }
+       // image.setImageResource(getIntent().getIntExtra("image",0));
+
+
         // TODO: 4/24/2024 immage and data base
     }}
