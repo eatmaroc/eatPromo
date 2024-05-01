@@ -10,9 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import com.squareup.picasso.Picasso;
+
+import androidx.collection.CircularArray;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -44,14 +46,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         holder.prix.setText(promo.getPrix());
         Picasso.get().load(promo.getImage()).into(holder.img);
 
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                long clickTime = System.currentTimeMillis();
-                if (clickTime - lastClickTime < DOUBLE_CLICK_TIME_DELTA){
-                    openDetaillesActivity(promo);
-                }
-                lastClickTime = clickTime;
+//                long clickTime = System.currentTimeMillis();
+//                if (clickTime - lastClickTime < DOUBLE_CLICK_TIME_DELTA){
+//                    openDetaillesActivity(promo);
+//                }
+//                lastClickTime = clickTime;
+                openDetaillesActivity(promo);
             }
         });
     }
@@ -63,6 +67,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         intent.putExtra("prix", item.getPrix());
         intent.putExtra("ville", item.getVille());
         intent.putExtra("quartier", item.getQuartier());
+
+        intent.putExtra("image", item.getImage());
+        intent.putExtra("whatsapp", item.getWhatsapp());
+        intent.putExtra("description", item.getDescription());
+        intent.putExtra("adress", item.getAdress());
+        intent.putExtra("location", item.getLocation());
         context.startActivity(intent);
     }
 

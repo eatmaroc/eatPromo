@@ -172,12 +172,13 @@ public class homePage extends AppCompatActivity   {
                     String whatsapp = promoSnapshot.child("whatsapp").getValue(String.class);
                     String adress = promoSnapshot.child("adress").getValue(String.class);
                     String description = promoSnapshot.child("description").getValue(String.class);
+                    String location=promoSnapshot.child("location").getValue(String.class);
 
                     // Check if the promotion matches the selected type and price filters
                     if ((selectedType.equals("Touts") || (type != null && type.equals(selectedType))) &&
                             (selectedPrix.equals("Prix") || isPriceInRange(prix, selectedPrix))) {
                         // Create a PromoCarte object
-                        Item promo = new Item(title, type, prix, image, whatsapp, description, adress, ville, quartier);
+                        Item promo = new Item(title, type, prix, image, whatsapp, description, adress, ville, quartier,location);
 
                         // Add the promotion to the list
                         listPromo.add(promo);
