@@ -18,7 +18,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,15 +33,20 @@
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_weight="9"
                 app:srcCompat="@drawable/baseline_location_on_24" />
 
             <TextView
                 android:id="@+id/text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:background="@drawable/cader_text_view"
+                android:gravity="center"
+                android:padding="8dp"
                 android:text="map"
                 android:textSize="20sp" />
 
