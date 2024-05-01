@@ -1,108 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@color/white"
+    android:background="#ecebe6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Detailles">
 
-    <ImageView
-        android:id="@+id/imgDeatilles"
+    <com.google.android.material.appbar.CollapsingToolbarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitStart"
-        android:src="@drawable/pain"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:contentScrim="?attr/colorPrimary"
+        app:title="Eat">
 
-    <LinearLayout
+        <ImageView
+            android:id="@+id/imgDeatilles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@drawable/pain"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    <FrameLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
         android:background="@drawable/backhround"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btnOrder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="NotSibling">
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+       >
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="20dp">
+            android:layout_height="match_parent"
+            android:layout_gravity="fill_vertical"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                app:srcCompat="@drawable/baseline_horizontal_rule_24" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/titleDetailles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/typeDD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textColor="@color/black"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/titleDetailles"
-                android:layout_width="wrap_content"
+                android:id="@+id/prixD"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
+                android:layout_gravity="bottom"
+                android:padding="20dp"
                 android:text="TextView"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:layout_weight="1" />
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:gravity="clip_horizontal" />
 
             <TextView
-                android:id="@+id/typeDD"
-                android:layout_width="wrap_content"
+                android:id="@+id/discriptionDetailles"
+                android:layout_width="match_parent"
+                android:layout_height="440dp"
+                android:layout_gravity="bottom"
+                android:padding="90dp"
+                android:text="Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue"
+                android:textSize="18sp" />
+
+
+            <Button
+                android:id="@+id/btnOrder"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="TextView"
-                android:textColor="@color/black"
-                android:textStyle="italic" />
+                android:layout_gravity="bottom"
+                android:elevation="8dp"
+                android:text="Button" />
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/prixD"
-            android:layout_width="404dp"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:text="TextView"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/discriptionDetailles"
-            android:layout_width="match_parent"
-            android:layout_height="226dp"
-            android:text="Enhance text clarity and understanding using an AI-driven paraphrasing tool. Perfect for students and professionals, this tool rewrites, edits, and adjusts tone for improved comprehension.  Rephrase sentences, paragraphs, essays, and articles effortlessly with our powerful paraphraser. Prevent plagiarism in blogs, research papers, and more using cutting-edge technology"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+    </FrameLayout>
 
 
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btnOrder"
-        android:layout_width="0dp"
-        android:layout_height="62dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

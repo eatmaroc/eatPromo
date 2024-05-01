@@ -1,10 +1,11 @@
 package com.eat.maroc.promo;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -13,7 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.squareup.picasso.Picasso;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 
 public class Detailles extends AppCompatActivity {
@@ -21,6 +22,7 @@ public class Detailles extends AppCompatActivity {
     Button order;
     TextView titre,type,prix,detailles;
 
+    FrameLayout frameLayout;
 
     @SuppressLint({"MissingInflatedId", "CutPasteId"})
     @Override
@@ -40,21 +42,15 @@ public class Detailles extends AppCompatActivity {
         prix=findViewById(R.id.prixD);
         detailles=findViewById(R.id.discriptionDetailles);
         order=findViewById(R.id.btnOrder);
+        frameLayout=findViewById(R.id.linearLayout3);
 
         titre.setText(getIntent().getStringExtra("title"));
         type.setText(getIntent().getStringExtra("type"));
         prix.setText(getIntent().getStringExtra("prix"));
-        detailles.setText(getIntent().getStringExtra("description"));
-        String imgUrl=getIntent().getStringExtra("image");
-        Picasso.get().load(imgUrl).into(image);
-        order.setOnClickListener(v->{
-            Intent intent = new Intent(Detailles.this, order.class);
-            intent.putExtra("location",getIntent().getStringExtra("location"));
-            intent.putExtra("adress", getIntent().getStringExtra("adress"));
-            intent.putExtra("whatsapp", getIntent().getStringExtra("whatsapp"));
-            startActivity(intent);
-        });
 
+        BottomSheetBehavior<FrameLayout> bottomSheetBehavior = BottomSheetBehavior.from(frameLayout);
+        bottomSheetBehavior.setPeekHeight(700);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 
         // Load the image using Picasso
        // image.setImageResource(getIntent().getIntExtra("image",0));
