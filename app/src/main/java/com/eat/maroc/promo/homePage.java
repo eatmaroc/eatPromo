@@ -328,6 +328,10 @@ public class homePage extends AppCompatActivity   {
         intent.putExtra("type", item.getType());
         intent.putExtra("prix", item.getPrix());
         intent.putExtra("image", item.getImage());
+        intent.putExtra("adress",item.getAdress());
+        intent.putExtra("location",item.getLocation());
+        intent.putExtra("whatsapp",item.getWhatsapp());
+
 
         startActivity(intent);
     }

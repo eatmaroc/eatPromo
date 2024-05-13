@@ -19,7 +19,7 @@
             android:id="@+id/imgDeatilles"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="center"
+            android:scaleType="fitCenter"
             android:src="@drawable/pain"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:paddingTop="20dp"
+                android:paddingBottom="100dp">
 
                 <TextView
                     android:id="@+id/titleDetailles"
@@ -93,32 +94,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:padding="20dp"
+                android:paddingStart="20dp"
                 android:text="TextView"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:gravity="clip_horizontal" />
 
+
             <TextView
                 android:id="@+id/discriptionDetailles"
                 android:layout_width="match_parent"
-                android:layout_height="440dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:padding="90dp"
+                android:padding="50dp"
                 android:text="Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue"
                 android:textSize="18sp" />
 
-
-            <Button
-                android:id="@+id/btnOrder"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:elevation="8dp"
-                android:text="Button" />
-
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="50dp"
+            android:backgroundTint="#4CAF50"
+            android:elevation="8dp"
+            android:text="Order" />
 
     </FrameLayout>
 
