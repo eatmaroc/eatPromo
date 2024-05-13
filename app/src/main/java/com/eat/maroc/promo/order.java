@@ -77,9 +77,3 @@ public class order extends AppCompatActivity {
         }
     }
 }
-//{
-//        "rules": {
-//        ".read": "now < 1714806000000",  // 2024-5-4
-//        ".write": "now < 1714806000000",  // 2024-5-4
-//        }
-//        }
