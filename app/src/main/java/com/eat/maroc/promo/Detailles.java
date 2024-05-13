@@ -1,6 +1,7 @@
 package com.eat.maroc.promo;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -15,6 +16,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.squareup.picasso.Picasso;
 
 
 public class Detailles extends AppCompatActivity {
@@ -46,15 +48,32 @@ public class Detailles extends AppCompatActivity {
 
         titre.setText(getIntent().getStringExtra("title"));
         type.setText(getIntent().getStringExtra("type"));
-        prix.setText(getIntent().getStringExtra("prix"));
+        prix.setText(getIntent().getStringExtra("prix")+" DH");
 
         BottomSheetBehavior<FrameLayout> bottomSheetBehavior = BottomSheetBehavior.from(frameLayout);
-        bottomSheetBehavior.setPeekHeight(700);
+        bottomSheetBehavior.setPeekHeight(350);
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
 
         // Load the image using Picasso
        // image.setImageResource(getIntent().getIntExtra("image",0));
 
 
+
         // TODO: 4/24/2024 immage and data base
+        String descrip = getIntent().getStringExtra("description");
+        detailles.setText(descrip);
+
+
+        String imageUrl = getIntent().getStringExtra("image");
+        Picasso.get().load(imageUrl).into(image);
+
+        order.setOnClickListener(v->{
+            Intent intent = new Intent(this, order.class);
+            intent.putExtra("adress", getIntent().getStringExtra("adress"));
+            intent.putExtra("location",getIntent().getStringExtra("location") );
+            intent.putExtra("whatsapp",getIntent().getStringExtra("whatsapp") );
+            startActivity(intent);
+        });
+
     }}
